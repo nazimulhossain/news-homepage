@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  @include phone {
+    font-size: 45%;
+  }
+}
+
+.attribution {
+  margin-top: 4.4rem;
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+}
+
+.author {
+  list-style: none;
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #222;
+  }
+}

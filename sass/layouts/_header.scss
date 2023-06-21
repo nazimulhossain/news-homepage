@@ -1,0 +1,92 @@
+.header {
+  &__logo {
+    height: 3rem;
+  }
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 4.4rem;
+
+      @include phone {
+        display: none;
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  &__nav-links {
+    text-decoration: none;
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 1.6rem;
+
+      color: $dark-grayish-blue;
+      transition: all 0.3s;
+
+      @include phone {
+        font-size: 2rem;
+        color: $very-dark-blue;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: $soft-orange;
+      cursor: pointer;
+    }
+  }
+
+  &__mobile-icon {
+    display: none;
+    @include phone {
+      display: block;
+    }
+  }
+}
+
+// MOBILE NAVIGATION
+
+.mobile__icon {
+  width: 3.4rem;
+  &--close {
+    @include phone {
+      display: none;
+    }
+  }
+}
+
+.show .header__nav {
+  min-height: 100vh;
+  min-width: 40vh;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2.4rem;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.show .header__mobile-icon {
+  display: block;
+  z-index: 200;
+}
+.hide .mobile__icon--open {
+  display: none;
+}
+.hide .mobile__icon--close {
+  display: block;
+}
